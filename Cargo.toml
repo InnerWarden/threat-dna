@@ -2,7 +2,7 @@
 name = "threat-dna"
 version = "0.1.0"
 edition = "2021"
-license = "Apache-2.0"
+license = "BUSL-1.1"
 repository = "https://github.com/InnerWarden/threat-dna"
 homepage = "https://innerwarden.com"
 description = "Identify attackers by methodology, not IP — behavioral fingerprinting with order-preserving hashes"
