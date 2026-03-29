@@ -1,0 +1,29 @@
+[package]
+name = "threat-dna"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+repository = "https://github.com/InnerWarden/threat-dna"
+homepage = "https://innerwarden.com"
+description = "Identify attackers by methodology, not IP — behavioral fingerprinting with order-preserving hashes"
+keywords = ["threat-intelligence", "behavioral-analysis", "fingerprinting", "ueba", "security"]
+
+[dependencies]
+anyhow = "1"
+chrono = { version = "0.4", features = ["serde"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+axum = { version = "0.7", features = ["json"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+sha2 = "0.10"
+hex = "0.4"
+clap = { version = "4", features = ["derive"] }
+notify = { version = "7", default-features = false, features = ["macos_kqueue"] }
+
+[target.'cfg(not(target_os = "macos"))'.dependencies]
+tikv-jemallocator = "0.6"
+
+[dev-dependencies]
+tempfile = "3"
